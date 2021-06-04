@@ -1,0 +1,46 @@
+#creating one document in mongo db
+
+db.shivang.insertOne({name:"shivang",type:"friend",college:"gla University",uid:17420011})
+#DROP database
+db.dropDatabase()
+
+#create collections
+db.createCollection("ziyaulhaq khan")
+
+#show active database
+db
+show collections #show collection
+
+
+#show documents
+db.shivang.find()
+db.shivang.find().pretty()
+
+
+#insert many document
+
+> db.shivang.insertMany([{name:"ziyaulhaq", city:"Aligarh",course:"MCA",Uid:"20MCA1307"},{gmail:"20mca1307@gmail.com",contact:704044392}])
+
+
+#find the document using constraint
+ db.shivang.find({name:"ziyaulhaq"})
+ db.shivang.find({name:"ziyaulhaq"},{name:0})//show document without name
+db.shivang.find({name:"ziyaulhaq"},{name:1}).pretty()//show only name
+db.shivang.findOne({name:"ziyaulhaq"},{name:1})
+
+> db.shivang.findOne({name:"ziyaulhaq"},{course:1})// visible only course
+
+                                #Delete document
+ db.shivang.deleteOne({name:"fizul"})//delete single document
+ db.shivang.deleteMnay({name:"fizul"})//dlelte multiple document
+db.shivang.remove({name:"fizul"})
+db.ziyaulhaq.deleteMany({})//delete all document
+
+
+                          
+
+
+                                   #update operation
+
+db.shivang.updateOne({name:"ziyaulhaq"},{$set:{course:"BCA"}})//update only one record
+db.shivang.update({name:"shivang"},{$set:{type:"Best Friend"}})//multiple record update
